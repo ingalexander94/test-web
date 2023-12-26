@@ -1,0 +1,101 @@
+section.slider {
+  background-image: url("./mechanic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+section.slider input {
+  display: none;
+}
+
+section.slider > div {
+  height: fit-content;
+}
+
+section.slider div.wrapper {
+  width: 420px;
+  height: 235px;
+  overflow: hidden;
+  position: relative;
+}
+
+section.slider div.slides {
+  width: calc(420px * 3);
+  display: flex;
+  column-gap: 10px;
+}
+
+section.slider div.slides div.slide {
+  transition: 2s;
+  display: grid;
+  place-items: center;
+  width: 420px;
+}
+
+section.slider div.slides div.slide p {
+  text-wrap: wrap;
+  background: rgba(255, 242, 242, 0.13);
+  backdrop-filter: blur(50px);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  padding: 0 25px;
+  color: var(--white-color);
+  letter-spacing: 0em;
+  text-align: left;
+  border-radius: 10px;
+}
+
+section.slider div.navigation_manual {
+  position: absolute;
+  width: 420px;
+  bottom: 0;
+  display: flex;
+  column-gap: 8px;
+  justify-content: center;
+}
+
+section.slider div.navigation_manual label.manual_btn {
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  transition: 1s;
+  cursor: pointer;
+  background: var(--white-color);
+}
+
+#radio1:checked ~ div.slides .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ div.slides .first {
+  margin-left: -430px;
+}
+
+#radio3:checked ~ div.slides .first {
+  margin-left: -860px;
+}
+
+#radio1:checked ~ div.navigation_manual .auto_btn1,
+#radio2:checked ~ div.navigation_manual .auto_btn2,
+#radio3:checked ~ div.navigation_manual .auto_btn3 {
+  width: 30px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1199px) {
+  section.slider {
+    display: none;
+  }
+}
